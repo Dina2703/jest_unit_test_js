@@ -3,8 +3,10 @@ const functions = {
   add: (num1, num2) => num1 + num2,
   //regular function
   add2: function (num1, num2) {
-    return num1 + num2;
+    return num1 + num2 + 1;
   },
+  isNull: () => null,
+  checkValue: (x) => x,
 };
 
 module.exports = functions;
