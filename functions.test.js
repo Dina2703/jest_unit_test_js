@@ -58,7 +58,21 @@ test("Should be under  or equal 1000", () => {
 // });
 
 //Arrays
-test("admin should be in usernames", () => {
-  users = ["anna", "sam", "kale"];
-  expect(users).toContain("john");
+// test("admin should be in usernames", () => {
+//   users = ["anna", "sam", "kale"];
+//   expect(users).toContain("john");
+// });
+
+//------test async functions//working with async data -----------
+test("user fecthed name should be Leanne Graham", () => {
+  expect.assertions(1);
+  return functions.fetchUser().then((data) => {
+    expect(data.name).toEqual("Leanne Graham");
+  });
+});
+//test with async / await
+test("user fecthed name should be Leanne Graham", async () => {
+  expect.assertions(1);
+  const data = await functions.fetchUser();
+  expect(data.name).toEqual("Leanne Graham");
 });

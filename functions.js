@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 const functions = {
   //with arrow function(short and clean syntax)
   add: (num1, num2) => num1 + num2,
@@ -14,7 +16,12 @@ const functions = {
     user["lastName"] = "Yomoda";
     return user;
   },
+  fetchUser: () =>
+    axios
+      .get("https://jsonplaceholder.typicode.com/users/1")
+      .then((response) => response.data)
+      .catch((err) => "err"),
 };
-console.log(functions.createUser());
+// console.log(functions.createUser());
 
 module.exports = functions;
