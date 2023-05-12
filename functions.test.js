@@ -1,5 +1,35 @@
 const functions = require("./functions");
 
+//beforeEach() and afterEach()functions allow to run a function before and after each test gets run.
+const initialDatabase = () => console.log("Database initialized");
+const closedDatabase = () => console.log("Database closed");
+
+// beforeEach(() => initialDatabase());
+// afterEach(() => closedDatabase());
+
+//beforeAll() and afterAll()functions allow to run a function before and after ALL tests get run.
+
+// beforeAll(() => initialDatabase());
+// afterAll(() => closedDatabase());
+
+//target for sertain functions, to run a specific function after or/and before they get run
+
+const nameCheck = () => console.log("Checking Name");
+
+describe("Check names", () => {
+  beforeEach(() => nameCheck());
+
+  test('User is "Jack"', () => {
+    const user = "Jack";
+    expect(user).toBe("Jack");
+  });
+
+  test('User is "Olivia"', () => {
+    const user = "Olivia";
+    expect(user).toBe("Olivia");
+  });
+});
+
 //test - passed
 test("Adds 2 + 2 to equal 4", () => {
   expect(functions.add(2, 2)).toBe(4);
