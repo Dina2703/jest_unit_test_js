@@ -7,6 +7,14 @@ const functions = {
   },
   isNull: () => null,
   checkValue: (x) => x,
+  createUser: () => {
+    const user = {
+      firstName: "Sam",
+    };
+    user["lastName"] = "Yomoda";
+    return user;
+  },
 };
+console.log(functions.createUser());
 
 module.exports = functions;
